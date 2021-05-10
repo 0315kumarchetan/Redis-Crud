@@ -11,7 +11,7 @@ spring:
   datasource:
     username: root
     password: rootroot
-    url: jdbc:mysql://10.0.3.45:3306/smartcontact
+    url: jdbc:mysql://localhost:3306/smartcontact
     driver-class-name: com.mysql.cj.jdbc.Driver
   data:
     redis:
@@ -21,12 +21,12 @@ datasource:
   master:
     username: root
     password: rootroot
-    url: jdbc:mysql://10.0.3.45:3306/smartcontact
+    url: jdbc:mysql://localhost:3306/smartcontact
     driver-class-name: com.mysql.cj.jdbc.Driver
   slave:
     username: root
     password: rootroot
-    url: jdbc:mysql://10.0.3.45:3306/smartcontact
+    url: jdbc:mysql://localhost:3306/smartcontact
     driver-class-name: com.mysql.cj.jdbc.Driver    
 
 management:
