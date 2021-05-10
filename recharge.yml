@@ -9,9 +9,9 @@ spring:
     port: 6379
     timeout: 600ms
   datasource:
-    username: deepak
-    password: D33p@k#ab
-    url: jdbc:mysql://10.0.3.45:3306/dba
+    username: root
+    password: rootroot
+    url: jdbc:mysql://10.0.3.45:3306/smartcontact
     driver-class-name: com.mysql.cj.jdbc.Driver
   data:
     redis:
@@ -19,14 +19,14 @@ spring:
         enabled: false
 datasource:
   master:
-    username: deepak
-    password: D33p@k#ab
-    url: jdbc:mysql://10.0.3.45:3306/dba
+    username: root
+    password: rootroot
+    url: jdbc:mysql://10.0.3.45:3306/smartcontact
     driver-class-name: com.mysql.cj.jdbc.Driver
   slave:
-    username: deepak
-    password: D33p@k#ab
-    url: jdbc:mysql://10.0.3.45:3306/dba
+    username: root
+    password: rootroot
+    url: jdbc:mysql://10.0.3.45:3306/smartcontact
     driver-class-name: com.mysql.cj.jdbc.Driver    
 
 management:
@@ -43,4 +43,8 @@ eureka:
     serviceUrl:
       defaultZone: ${eurekaclient.uri}
     healthcheck:
-      enabled: true        
+      enabled: true 
+      
+      
+      
+             
