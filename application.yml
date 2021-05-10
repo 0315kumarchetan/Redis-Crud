@@ -1,0 +1,10 @@
+my:
+  first: hello1
+
+banner:
+      location: https://shreedhan.paymonk.com/offers/banner.txt
+
+eurekaclient:
+  uri: http://localhost:8111/eureka/
+
+    

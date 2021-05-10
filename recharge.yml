@@ -1,0 +1,46 @@
+spring:
+  banner:
+    location: ${banner.location}
+  application:
+    name: recharge-service
+  redis:
+    database: 0
+    host: 192.168.100.155
+    port: 6379
+    timeout: 600ms
+  datasource:
+    username: deepak
+    password: D33p@k#ab
+    url: jdbc:mysql://10.0.3.45:3306/dba
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      repositories:
+        enabled: false
+datasource:
+  master:
+    username: deepak
+    password: D33p@k#ab
+    url: jdbc:mysql://10.0.3.45:3306/dba
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  slave:
+    username: deepak
+    password: D33p@k#ab
+    url: jdbc:mysql://10.0.3.45:3306/dba
+    driver-class-name: com.mysql.cj.jdbc.Driver    
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: ${eurekaclient.uri}
+    healthcheck:
+      enabled: true        
