@@ -3,31 +3,13 @@ spring:
     location: ${banner.location}
   application:
     name: recharge-service
-  redis:
-    database: 0
-    host: 192.168.100.155
-    port: 6379
-    timeout: 600ms
+  jpa:
+    hibernate.ddl-auto: none
+    generate-ddl: false
+    show-sql: true
+    database: mysql    
   datasource:
-    username: root
-    password: root
-    url: jdbc:mysql://localhost:3306/dba
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  data:
-    redis:
-      repositories:
-        enabled: false
-datasource:
-  master:
-    username: root
-    password: root
-    url: jdbc:mysql://localhost:3306/dba
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  slave:
-    username: root
-    password: root
-    url: jdbc:mysql://localhost:3306/dba
-    driver-class-name: com.mysql.cj.jdbc.Driver    
+    type: com.zaxxer.hikari.HikariDataSource          
 
 management:
   endpoints:
@@ -43,7 +25,8 @@ eureka:
     serviceUrl:
       defaultZone: ${eurekaclient.uri}
     healthcheck:
-      enabled: true 
+      enabled: true        
+
       
       
       

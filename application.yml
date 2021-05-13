@@ -1,7 +1,5 @@
 my:
-  first: third
-  second: hello_i_am_the_builder_second     
-  
+  first: hello1
 
 banner:
       location: https://shreedhan.paymonk.com/offers/banner.txt
@@ -9,5 +7,41 @@ banner:
 eurekaclient:
   uri: http://localhost:8111/eureka/
 
+logging:
+  level:
+    com.zaxxer.hikari.HikariConfig: trace
+    com.zaxxer.hikari: DEBUG
 
-    
+
+
+datasource:
+  master:
+    username: root
+    password: rootroot
+    url: jdbc:mysql://localhost:3306/dba
+    driverClassName: com.mysql.cj.jdbc.Driver
+  slave:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.1.162:3306/dba
+    driverClassName: com.mysql.cj.jdbc.Driver
+  masterhikari:
+    connection-timeout: 10000
+    maximum-pool-size: 10
+    minimum-idle: 1
+    pool-name: master
+    data-source-properties:
+       prepStmtCacheSize: 250
+       prepStmtCacheSqlLimit: 2048       
+       cachePrepStmts: true
+       useServerPrepStmts: true
+  slavehikari: 
+    connection-timeout: 10000
+    maximum-pool-size: 10
+    minimum-idle: 1
+    pool-name: slave
+    data-source-properties:
+       prepStmtCacheSize: 250
+       prepStmtCacheSqlLimit: 2048       
+       cachePrepStmts: true
+       useServerPrepStmts: true   
